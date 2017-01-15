@@ -172,7 +172,7 @@ __Vectors_End
 
 __Vectors_Size  EQU  __Vectors_End - __Vectors
 
-                AREA    |.text|, CODE, READONLY
+                AREA    MAIN, CODE, READONLY
 
 ; Reset handler
 Reset_Handler    PROC
