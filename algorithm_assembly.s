@@ -41,6 +41,8 @@ LOOP		ADD R4,R4,#1
 			MOV	 R8,[R6,#+15]	;WEIGHT 2 FOR BELOW ELEMENT
 			ADD  R7,R8,LSL#1	
 			MOV  R8,#0
+			
+			MOV  [R6],R7,ASR#4	
 
 			
 			
