@@ -1,0 +1,14 @@
+		AREA project, CODE, READONLY
+			
+			EXPORT MAIN			;NEEDED LINE
+				ENTRY			;SHOWS WHEN THE CODE STARTS
+				
+				
+MAIN							;USED AS LABEL
+			MOV R0,#0x00000001	;IMMEDIATE MOVE TEST
+			
+			
+			
+			END
+				
+				
