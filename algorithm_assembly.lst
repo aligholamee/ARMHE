@@ -21,7 +21,7 @@ ARM Macro Assembler    Page 1
                                                             ES UNTILL 15*15 - 1
                                                             )
    12 0000000C F04F 5500       MOV              R5,#0x20000000 ;STACK POINTER
-   13 00000010 DE00            ADR              R6,LINE1    ;ARRAY START POINTE
+   13 00000010 A636            ADR              R6,LINE1    ;ARRAY START POINTE
                                                             R
    14 00000012 F04F 0800       MOV              R8,#0       ;TEMPORARY REGISTER
                                                              FOR WIEGHT MULTIPL
@@ -115,142 +115,557 @@ ARM Macro Assembler    Page 2
                                                             
    72 000000A8         
    73 000000A8         
-   74 000000A8 00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00    LINE0   DCB              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-,0 
-                                                            ;ZERO BLOCK
-   75 000000B9 00 77 63 
-              6F 8D 2B 
-              00 0C 07 
-              00 0A 10 
-              0F 21 21 
+   74 000000A8 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-              1F 00    LINE1   DCB              0,119,99,111,141,43,0,12,7,0,10
+              00000000 
+              00000000 
+              00000000 
+              00000000 LINE0   DCD              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,0 
+                                                            ;ZERO BLOCK
+   75 000000EC 00000000 
+              00000077 
+              00000063 
+              0000006F 
+              0000008D 
+              0000002B 
+              00000000 
+              0000000C 
+              00000007 
+              00000000 
+              0000000A 
+              00000010 
+              0000000F 
+              00000021 
+              00000021 
+              0000001F 
+              00000000 LINE1   DCD              0,119,99,111,141,43,0,12,7,0,10
 ,16,15,33,33,31,0
-   76 000000CA 00 60 5D 
-              6C 70 86 
-              3A 02 00 
-              09 00 00 
-              0E 18 16 
-              16 00    LINE2   DCB              0,96,93,108,112,134,58,2,0,9,0,
+   76 00000130 00000000 
+              00000060 
+              0000005D 
+              0000006C 
+              00000070 
+              00000086 
+              0000003A 
+              00000002 
+              00000000 
+              00000009 
+              00000000 
+              00000000 
+              0000000E 
+              00000018 
+              00000016 
+              00000016 
+              00000000 LINE2   DCD              0,96,93,108,112,134,58,2,0,9,0,
 0,14,24,22,22,0
-   77 000000DB 00 6E 67 
-              67 6A 7B 
-              78 3B 08 
-              00 00 00 
-              03 09 0C 
-              0F 00    LINE3   DCB              0,110,103,103,106,123,120,59,8,
-0,0,0,3,9,12,15,0
-   78 000000EC 00 65 82 
-              6F 60 65 
-              7A 7D 46 
-              0A 03 02 
-              00 05 04 
-              09 00    LINE4   DCB              0,101,130,111,96,101,122,125,70
-,10,3,2,0,5,4,9,0
-   79 000000FD 00 7F 67 
-              65 6D 6C 
-              72 7B 7C 
-              4C 05 00 
-              04 0A 00 
-              07 00    LINE5   DCB              0,127,103,101,109,108,114,123,1
-24,76,5,0,4,10,0,7,0
-   80 0000010E 00 71 76 
-              77 72 6D 
-              77 70 74 
-              87 70 1A 
-              00 0D 00 
-              03 00    LINE6   DCB              0,113,118,119,114,109,119,112,1
-16,135,112,26,0,13,0,3,0
-   81 0000011F 00 6F 74 
-              76 72 6E 
-              70 79 66 
-              6E 8E 6A 
-              1A 00 0A 
-              00 00    LINE7   DCB              0,111,116,118,114,110,112,121,1
-02,110,142,106,26,0,10,0,0
-   82 00000130 00 6C 71 
-              74 73 70 
-              80 60 75 
-              7C 65 81 
-              76 17 00 
-              11 00    LINE8   DCB              0,108,113,116,115,112,128,96,11
-7,124,101,129,118,23,0,17,0
-   83 00000141 00 6B 6F 
-              73 73 72 
-              74 77 7D 
-              72 61 6D 
-              7B 74 2B 
-              0A 00    LINE9   DCB              0,107,111,115,115,114,116,119,1
-25,114,97,109,123,116,43,10,0
-   84 00000152 00 6C 6E 
+   77 00000174 00000000 
+              0000006E 
+              00000067 
+              00000067 
+              0000006A 
+              0000007B 
+              00000078 
+              0000003B 
+              00000008 
+              00000000 
+              00000000 
+              00000000 
+              00000003 
+              00000009 
+              0000000C 
+              0000000F 
+              00000000 LINE3   DCD              0,110,103,103,106,123,120,59,8,
 
 
 
 ARM Macro Assembler    Page 4 
 
 
-              72 73 73 
-              71 77 74 
-              74 77 6E 
-              71 88 86 
-              38 00    LINE10  DCB              0,108,110,114,115,115,113,119,1
+0,0,0,3,9,12,15,0
+   78 000001B8 00000000 
+              00000065 
+              00000082 
+              0000006F 
+              00000060 
+              00000065 
+              0000007A 
+              0000007D 
+              00000046 
+              0000000A 
+              00000003 
+              00000002 
+              00000000 
+              00000005 
+              00000004 
+              00000009 
+              00000000 LINE4   DCD              0,101,130,111,96,101,122,125,70
+,10,3,2,0,5,4,9,0
+   79 000001FC 00000000 
+              0000007F 
+              00000067 
+              00000065 
+              0000006D 
+              0000006C 
+              00000072 
+              0000007B 
+              0000007C 
+              0000004C 
+              00000005 
+              00000000 
+              00000004 
+              0000000A 
+              00000000 
+              00000007 
+              00000000 LINE5   DCD              0,127,103,101,109,108,114,123,1
+24,76,5,0,4,10,0,7,0
+   80 00000240 00000000 
+              00000071 
+              00000076 
+              00000077 
+              00000072 
+              0000006D 
+              00000077 
+              00000070 
+              00000074 
+              00000087 
+              00000070 
+              0000001A 
+              00000000 
+              0000000D 
+              00000000 
+              00000003 
+              00000000 LINE6   DCD              0,113,118,119,114,109,119,112,1
+16,135,112,26,0,13,0,3,0
+   81 00000284 00000000 
+              0000006F 
+              00000074 
+              00000076 
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+              00000072 
+              0000006E 
+              00000070 
+              00000079 
+              00000066 
+              0000006E 
+              0000008E 
+              0000006A 
+              0000001A 
+              00000000 
+              0000000A 
+              00000000 
+              00000000 LINE7   DCD              0,111,116,118,114,110,112,121,1
+02,110,142,106,26,0,10,0,0
+   82 000002C8 00000000 
+              0000006C 
+              00000071 
+              00000074 
+              00000073 
+              00000070 
+              00000080 
+              00000060 
+              00000075 
+              0000007C 
+              00000065 
+              00000081 
+              00000076 
+              00000017 
+              00000000 
+              00000011 
+              00000000 LINE8   DCD              0,108,113,116,115,112,128,96,11
+7,124,101,129,118,23,0,17,0
+   83 0000030C 00000000 
+              0000006B 
+              0000006F 
+              00000073 
+              00000073 
+              00000072 
+              00000074 
+              00000077 
+              0000007D 
+              00000072 
+              00000061 
+              0000006D 
+              0000007B 
+              00000074 
+              0000002B 
+              0000000A 
+              00000000 LINE9   DCD              0,107,111,115,115,114,116,119,1
+25,114,97,109,123,116,43,10,0
+   84 00000350 00000000 
+              0000006C 
+              0000006E 
+              00000072 
+              00000073 
+              00000073 
+              00000071 
+              00000077 
+              00000074 
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+              00000074 
+              00000077 
+              0000006E 
+              00000071 
+              00000088 
+              00000086 
+              00000038 
+              00000000 LINE10  DCD              0,108,110,114,115,115,113,119,1
 16,116,119,110,113,136,134,56,0
-   85 00000163 00 6F 6E 
-              71 73 74 
-              7C 6C 70 
-              78 73 78 
-              7C 70 8B 
-              8E 00    LINE11  DCB              0,111,110,113,115,116,124,108,1
+   85 00000394 00000000 
+              0000006F 
+              0000006E 
+              00000071 
+              00000073 
+              00000074 
+              0000007C 
+              0000006C 
+              00000070 
+              00000078 
+              00000073 
+              00000078 
+              0000007C 
+              00000070 
+              0000008B 
+              0000008E 
+              00000000 LINE11  DCD              0,111,110,113,115,116,124,108,1
 12,120,115,120,124,112,139,142,0
-   86 00000174 00 73 6F 
-              71 73 74 
-              6E 8B 72 
-              5E 7C 7A 
-              68 7B 72 
-              84 00    LINE12  DCB              0,115,111,113,115,116,110,139,1
+   86 000003D8 00000000 
+              00000073 
+              0000006F 
+              00000071 
+              00000073 
+              00000074 
+              0000006E 
+              0000008B 
+              00000072 
+              0000005E 
+              0000007C 
+              0000007A 
+              00000068 
+              0000007B 
+              00000072 
+              00000084 
+              00000000 LINE12  DCD              0,115,111,113,115,116,110,139,1
 14,94,124,122,104,123,114,132,0
-   87 00000185 00 76 70 
-              71 73 74 
-              77 74 7D 
-              78 67 72 
-              7E 6E 65 
-              6E 00    LINE13  DCB              0,118,112,113,115,116,119,116,1
+   87 0000041C 00000000 
+              00000076 
+              00000070 
+              00000071 
+              00000073 
+              00000074 
+              00000077 
+              00000074 
+              0000007D 
+              00000078 
+              00000067 
+              00000072 
+              0000007E 
+              0000006E 
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+              00000065 
+              0000006E 
+              00000000 LINE13  DCD              0,118,112,113,115,116,119,116,1
 25,120,103,114,126,110,101,110,0
-   88 00000196 00 76 71 
-              5B 75 67 
-              71 71 71 
-              72 73 74 
-              74 75 69 
-              68 00    LINE14  DCB              0,118,113,91,117,103,113,113,11
+   88 00000460 00000000 
+              00000076 
+              00000071 
+              0000005B 
+              00000075 
+              00000067 
+              00000071 
+              00000071 
+              00000071 
+              00000072 
+              00000073 
+              00000074 
+              00000074 
+              00000075 
+              00000069 
+              00000068 
+              00000000 LINE14  DCD              0,118,113,91,117,103,113,113,11
 3,114,115,116,116,117,105,104,0
-   89 000001A7 00 7C 75 
-              5E 75 67 
-              70 71 71 
-              72 73 74 
-              74 74 7A 
-              6C 00    LINE15  DCB              0,124,117,94,117,103,112,113,11
+   89 000004A4 00000000 
+              0000007C 
+              00000075 
+              0000005E 
+              00000075 
+              00000067 
+              00000070 
+              00000071 
+              00000071 
+              00000072 
+              00000073 
+              00000074 
+              00000074 
+              00000074 
+              0000007A 
+              0000006C 
+              00000000 LINE15  DCD              0,124,117,94,117,103,112,113,11
 3,114,115,116,116,116,122,108,0
-   90 000001B8 00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00 00 
-              00 00    LINE16  DCB              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+   90 000004E8 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 LINE16  DCD              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 ,0 
                                                             ;ZERO BLOCK
-   91 000001C9         
-   92 000001C9                 END
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+   91 0000052C         
+   92 0000052C                 END
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\alg
 orithm_assembly.d -o.\algorithm_assembly.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM
 \CMSIS\Include -IC:\Keil\ARM\Inc\ST\STM32F4xx --predefine="__EVAL SETA 1" --lis
 t=.\algorithm_assembly.lst algorithm_assembly.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EOF 000000A6
+
+Symbol: EOF
+   Definitions
+      At line 71 in file algorithm_assembly.s
+   Uses
+      At line 19 in file algorithm_assembly.s
+      At line 71 in file algorithm_assembly.s
+
+LINE0 000000A8
+
+Symbol: LINE0
+   Definitions
+      At line 74 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE0 unused
+LINE1 000000EC
+
+Symbol: LINE1
+   Definitions
+      At line 75 in file algorithm_assembly.s
+   Uses
+      At line 13 in file algorithm_assembly.s
+Comment: LINE1 used once
+LINE10 00000350
+
+Symbol: LINE10
+   Definitions
+      At line 84 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE10 unused
+LINE11 00000394
+
+Symbol: LINE11
+   Definitions
+      At line 85 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE11 unused
+LINE12 000003D8
+
+Symbol: LINE12
+   Definitions
+      At line 86 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE12 unused
+LINE13 0000041C
+
+Symbol: LINE13
+   Definitions
+      At line 87 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE13 unused
+LINE14 00000460
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: LINE14
+   Definitions
+      At line 88 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE14 unused
+LINE15 000004A4
+
+Symbol: LINE15
+   Definitions
+      At line 89 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE15 unused
+LINE16 000004E8
+
+Symbol: LINE16
+   Definitions
+      At line 90 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE16 unused
+LINE2 00000130
+
+Symbol: LINE2
+   Definitions
+      At line 76 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE2 unused
+LINE3 00000174
+
+Symbol: LINE3
+   Definitions
+      At line 77 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE3 unused
+LINE4 000001B8
+
+Symbol: LINE4
+   Definitions
+      At line 78 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE4 unused
+LINE5 000001FC
+
+Symbol: LINE5
+   Definitions
+      At line 79 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE5 unused
+LINE6 00000240
+
+Symbol: LINE6
+   Definitions
+      At line 80 in file algorithm_assembly.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Uses
+      None
+Comment: LINE6 unused
+LINE7 00000284
+
+Symbol: LINE7
+   Definitions
+      At line 81 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE7 unused
+LINE8 000002C8
+
+Symbol: LINE8
+   Definitions
+      At line 82 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE8 unused
+LINE9 0000030C
+
+Symbol: LINE9
+   Definitions
+      At line 83 in file algorithm_assembly.s
+   Uses
+      None
+Comment: LINE9 unused
+LOOP 0000001A
+
+Symbol: LOOP
+   Definitions
+      At line 17 in file algorithm_assembly.s
+   Uses
+      At line 64 in file algorithm_assembly.s
+      At line 68 in file algorithm_assembly.s
+
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 7 in file algorithm_assembly.s
+   Uses
+      At line 3 in file algorithm_assembly.s
+Comment: MAIN used once
+NEWLINE 0000009C
+
+Symbol: NEWLINE
+   Definitions
+      At line 66 in file algorithm_assembly.s
+   Uses
+      At line 24 in file algorithm_assembly.s
+Comment: NEWLINE used once
+project 00000000
+
+Symbol: project
+   Definitions
+      At line 1 in file algorithm_assembly.s
+   Uses
+      None
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+Comment: project unused
+22 symbols
+354 symbols in table

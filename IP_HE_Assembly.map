@@ -46,7 +46,7 @@ Image Symbol Table
     .text                                    0x08000394   Section       64  startup_stm32f40xx.o(.text)
     $v0                                      0x08000394   Number         0  startup_stm32f40xx.o(.text)
     .text                                    0x080003d4   Section        0  heapauxi.o(.text)
-    project                                  0x080003dc   Section      251  algorithm_assembly.o(project)
+    project                                  0x080003dc   Section     1324  algorithm_assembly.o(project)
     $v0                                      0x080003dc   Number         0  algorithm_assembly.o(project)
     .data                                    0x20000000   Section       20  system_stm32f4xx.o(.data)
     HEAP                                     0x20000018   Section      512  startup_stm32f40xx.o(HEAP)
@@ -173,9 +173,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000395
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x000004ec, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x0000091c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x08000000, Size: 0x000004d8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x00000908, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -184,7 +184,7 @@ Memory Map of the image
     0x08000394   0x00000040   Code   RO           55  * .text               startup_stm32f40xx.o
     0x080003d4   0x00000006   Code   RO           61    .text               c_w.l(heapauxi.o)
     0x080003da   0x00000002   PAD
-    0x080003dc   0x000000fb   Code   RO            1  * project             algorithm_assembly.o
+    0x080003dc   0x0000052c   Code   RO            1  * project             algorithm_assembly.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
@@ -210,14 +210,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       251        225          0          0          0        276   algorithm_assembly.o
+      1324       1156          0          0          0        316   algorithm_assembly.o
         64         26        392          0       1536        880   startup_stm32f40xx.o
        524         44          0         20          0       5935   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-       840        296        392         20       1540       7091   Object Totals
+      1912       1226        392         20       1540       7131   Object Totals
          0          0          0          0          0          0   (incl. Generated)
-         1          1          0          0          4          0   (incl. Padding)
+         0          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -245,15 +245,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       848        296        392         20       1540       7243   Grand Totals
-       848        296        392         20       1540       7243   ELF Image Totals
-       848        296        392         20          0          0   ROM Totals
+      1920       1226        392         20       1540       7283   Grand Totals
+      1920       1226        392         20       1540       7283   ELF Image Totals
+      1920       1226        392         20          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1240 (   1.21kB)
+    Total RO  Size (Code + RO Data)                 2312 (   2.26kB)
     Total RW  Size (RW Data + ZI Data)              1560 (   1.52kB)
-    Total ROM Size (Code + RO Data + RW Data)       1260 (   1.23kB)
+    Total ROM Size (Code + RO Data + RW Data)       2332 (   2.28kB)
 
 ==============================================================================
 
