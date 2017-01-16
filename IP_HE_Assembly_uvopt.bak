@@ -178,7 +178,7 @@
         <aSer4>0</aSer4>
         <StkLoc>0</StkLoc>
         <TrcWin>0</TrcWin>
-        <newCpu>0</newCpu>
+        <newCpu>3</newCpu>
         <uProt>0</uProt>
       </DebugFlag>
       <LintExecutable></LintExecutable>
@@ -198,10 +198,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>44</ColumnNumber>
+      <ColumnNumber>26</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>30</TopLine>
-      <CurrentLine>51</CurrentLine>
+      <TopLine>25</TopLine>
+      <CurrentLine>37</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\algorithm_assembly.s</PathWithFileName>
       <FilenameWithoutPath>algorithm_assembly.s</FilenameWithoutPath>
@@ -224,7 +224,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>340</TopLine>
+      <TopLine>339</TopLine>
       <CurrentLine>345</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>C:\Keil\ARM\Startup\ST\STM32F4xx\system_stm32f4xx.c</PathWithFileName>
@@ -240,7 +240,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>178</TopLine>
+      <TopLine>177</TopLine>
       <CurrentLine>183</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>C:\Keil\ARM\Startup\ST\STM32F4xx\startup_stm32f40xx.s</PathWithFileName>
