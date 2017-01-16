@@ -3,6 +3,63 @@
 			EXPORT MAIN			;NEEDED LINE
 				ENTRY			;SHOWS WHEN THE CODE STARTS
 				
+				;activating clocks of the procesor
+			LDR R3,=0x40023830
+			LDR R11,[R3]
+			LDR R12,=0x3
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;the part of GPIO processing
+			;GPIO(input part)
+			;mod
+			LDR R3,=0x40020000
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;setting the speed
+			LDR R3,=0x40020008
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;part of pullup & pulldown
+			LDR R3,=0x4002000c
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;GPIO(output part)
+			;mod
+			LDR R3,=0x40020400
+			LDR R11,[R3]
+			LDR R12,=0x1
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;type part
+			LDR R3,=0x40020404
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;part of setting the speed
+			LDR R3,=0x40020408
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+			;part of pullup & pulldown
+			LDR R3,=0x4002040c
+			LDR R11,[R3]
+			LDR R12,=0x0
+			ORR R2,R12,R11
+			STR R2,[R3]
+
+INPUT_IDR	LDR R3,=0x40020010
+			LDR R11,[R3]
+			TST R11,#0x1
+			BEQ INPUT_IDR
+			
 				
 MAIN							;USED AS LABEL
 			;; Variable (Register) Definition
@@ -71,17 +128,11 @@ LOOP		ADD R4,R4,#1
 			MOV  R7,R7,ASR#4	
 			STR  R7,[R5],#+1		;STORE THE AVERAGE PIXEL ON THE STACK POINTER AND INCREMENT SP
 			
-			
-
-B    LOOP				;BRANCH TO LOOP
-			
+			B    LOOP				;BRANCH TO LOOP		
 NEWLINE		MOV  R1,#0				;RESET THE COLUMN COUNTER
 			ADD  R6,R6,#+1			;SET THE NEW LINE ADDRESS
-			B    LOOP
-			
-			
+			B    LOOP		
 EOF	B	EOF						;END OF ALGORITHM		
-
 LINE0	DCB	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0					;ZERO BLOCK
 LINE1	DCB	0,119,99,111,141,43,0,12,7,0,10,16,15,33,33,31,0
 LINE2	DCB	0,96,93,108,112,134,58,2,0,9,0,0,14,24,22,22,0
