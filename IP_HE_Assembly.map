@@ -46,7 +46,7 @@ Image Symbol Table
     .text                                    0x08000394   Section       64  startup_stm32f40xx.o(.text)
     $v0                                      0x08000394   Number         0  startup_stm32f40xx.o(.text)
     .text                                    0x080003d4   Section        0  heapauxi.o(.text)
-    project                                  0x080003dc   Section     1444  algorithm_assembly.o(project)
+    project                                  0x080003dc   Section     1524  algorithm_assembly.o(project)
     $v0                                      0x080003dc   Number         0  algorithm_assembly.o(project)
     .data                                    0x20000000   Section       20  system_stm32f4xx.o(.data)
     HEAP                                     0x20000018   Section      512  startup_stm32f40xx.o(HEAP)
@@ -173,9 +173,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000395
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000994, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000009e4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x08000000, Size: 0x00000980, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x000009d0, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -184,7 +184,7 @@ Memory Map of the image
     0x08000394   0x00000040   Code   RO           55  * .text               startup_stm32f40xx.o
     0x080003d4   0x00000006   Code   RO           61    .text               c_w.l(heapauxi.o)
     0x080003da   0x00000002   PAD
-    0x080003dc   0x000005a4   Code   RO            1  * project             algorithm_assembly.o
+    0x080003dc   0x000005f4   Code   RO            1  * project             algorithm_assembly.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000014, Max: 0xffffffff, ABSOLUTE)
@@ -210,12 +210,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1444       1180          0          0          0        392   algorithm_assembly.o
+      1524       1202          0          0          0        440   algorithm_assembly.o
         64         26        392          0       1536        880   startup_stm32f40xx.o
        524         44          0         20          0       5935   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      2032       1250        392         20       1540       7207   Object Totals
+      2112       1272        392         20       1540       7255   Object Totals
          0          0          0          0          0          0   (incl. Generated)
          0          0          0          0          4          0   (incl. Padding)
 
@@ -245,15 +245,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2040       1250        392         20       1540       7359   Grand Totals
-      2040       1250        392         20       1540       7359   ELF Image Totals
-      2040       1250        392         20          0          0   ROM Totals
+      2120       1272        392         20       1540       7407   Grand Totals
+      2120       1272        392         20       1540       7407   ELF Image Totals
+      2120       1272        392         20          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2432 (   2.38kB)
+    Total RO  Size (Code + RO Data)                 2512 (   2.45kB)
     Total RW  Size (RW Data + ZI Data)              1560 (   1.52kB)
-    Total ROM Size (Code + RO Data + RW Data)       2452 (   2.39kB)
+    Total ROM Size (Code + RO Data + RW Data)       2532 (   2.47kB)
 
 ==============================================================================
 
