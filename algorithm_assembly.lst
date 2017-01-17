@@ -10,70 +10,74 @@ ARM Macro Assembler    Page 1
     4 00000000                 ENTRY                        ;SHOWS WHEN THE COD
                                                             E STARTS
     5 00000000         
-    6 00000000         ;activating clocks of the procesor 
+    6 00000000         ;CLOCK ACTIVATION 
     7 00000000 4B20            LDR              R3,=0x40023830
     8 00000002 F8D3 B000       LDR              R11,[R3]
     9 00000006 F04F 0C03       LDR              R12,=0x3
    10 0000000A EA4C 020B       ORR              R2,R12,R11
    11 0000000E 601A            STR              R2,[R3]
-   12 00000010         ;the part of GPIO processing
-   13 00000010         
-   14 00000010         ;GPIO(input part)
-   15 00000010         ;mod
+   12 00000010         
+   13 00000010         ;GPIO PROCESSING
+   14 00000010         ;GENERAL PURPOSE INPUT
+   15 00000010         ;MOD
    16 00000010 4B1D            LDR              R3,=0x40020000
    17 00000012 F8D3 B000       LDR              R11,[R3]
    18 00000016 F04F 0C00       LDR              R12,=0x0
    19 0000001A EA4C 020B       ORR              R2,R12,R11
    20 0000001E 601A            STR              R2,[R3]
-   21 00000020         ;setting the speed
-   22 00000020 4B1A            LDR              R3,=0x40020008
-   23 00000022 F8D3 B000       LDR              R11,[R3]
-   24 00000026 F04F 0C00       LDR              R12,=0x0
-   25 0000002A EA4C 020B       ORR              R2,R12,R11
-   26 0000002E 601A            STR              R2,[R3]
-   27 00000030         ;part of pullup & pulldown
-   28 00000030 4B17            LDR              R3,=0x4002000c
-   29 00000032 F8D3 B000       LDR              R11,[R3]
-   30 00000036 F04F 0C00       LDR              R12,=0x0
-   31 0000003A EA4C 020B       ORR              R2,R12,R11
-   32 0000003E 601A            STR              R2,[R3]
-   33 00000040         ;GPIO(output part)
-   34 00000040         ;mod
-   35 00000040 4B14            LDR              R3,=0x40020400
-   36 00000042 F8D3 B000       LDR              R11,[R3]
-   37 00000046 F04F 0C01       LDR              R12,=0x1
-   38 0000004A EA4C 020B       ORR              R2,R12,R11
-   39 0000004E 601A            STR              R2,[R3]
-   40 00000050         ;type part
-   41 00000050 4B11            LDR              R3,=0x40020404
-   42 00000052 F8D3 B000       LDR              R11,[R3]
-   43 00000056 F04F 0C00       LDR              R12,=0x0
-   44 0000005A EA4C 020B       ORR              R2,R12,R11
-   45 0000005E 601A            STR              R2,[R3]
-   46 00000060         ;part of setting the speed
-   47 00000060 4B0E            LDR              R3,=0x40020408
-   48 00000062 F8D3 B000       LDR              R11,[R3]
-   49 00000066 F04F 0C00       LDR              R12,=0x0
-   50 0000006A EA4C 020B       ORR              R2,R12,R11
-   51 0000006E 601A            STR              R2,[R3]
-   52 00000070         ;part of pullup & pulldown
-   53 00000070 4B0B            LDR              R3,=0x4002040c
-   54 00000072 F8D3 B000       LDR              R11,[R3]
-   55 00000076 F04F 0C00       LDR              R12,=0x0
-   56 0000007A EA4C 020B       ORR              R2,R12,R11
-   57 0000007E 601A            STR              R2,[R3]
-   58 00000080         
+   21 00000020         
+   22 00000020         ;SPEED SETTING
+   23 00000020 4B1A            LDR              R3,=0x40020008
+   24 00000022 F8D3 B000       LDR              R11,[R3]
+   25 00000026 F04F 0C00       LDR              R12,=0x0
+   26 0000002A EA4C 020B       ORR              R2,R12,R11
+   27 0000002E 601A            STR              R2,[R3]
+   28 00000030         
+   29 00000030         ;PULL UP PULL DOWN
+   30 00000030 4B17            LDR              R3,=0x4002000c
+   31 00000032 F8D3 B000       LDR              R11,[R3]
+   32 00000036 F04F 0C00       LDR              R12,=0x0
+   33 0000003A EA4C 020B       ORR              R2,R12,R11
+   34 0000003E 601A            STR              R2,[R3]
+   35 00000040         
+   36 00000040         
+   37 00000040         ;GENERAL PURPOSE OUTPUT
+   38 00000040         ;MOD
+   39 00000040 4B14            LDR              R3,=0x40020400
+   40 00000042 F8D3 B000       LDR              R11,[R3]
+   41 00000046 F04F 0C01       LDR              R12,=0x1
+   42 0000004A EA4C 020B       ORR              R2,R12,R11
+   43 0000004E 601A            STR              R2,[R3]
+   44 00000050         ;TYPE
+   45 00000050 4B11            LDR              R3,=0x40020404
+   46 00000052 F8D3 B000       LDR              R11,[R3]
+   47 00000056 F04F 0C00       LDR              R12,=0x0
+   48 0000005A EA4C 020B       ORR              R2,R12,R11
+   49 0000005E 601A            STR              R2,[R3]
+   50 00000060         ;SPEED SETTING
+   51 00000060 4B0E            LDR              R3,=0x40020408
+   52 00000062 F8D3 B000       LDR              R11,[R3]
+   53 00000066 F04F 0C00       LDR              R12,=0x0
+   54 0000006A EA4C 020B       ORR              R2,R12,R11
+   55 0000006E 601A            STR              R2,[R3]
+   56 00000070         ;PULL UP PULL DOWN
+   57 00000070 4B0B            LDR              R3,=0x4002040c
+   58 00000072 F8D3 B000       LDR              R11,[R3]
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-   59 00000080         
-   60 00000080 BF00    INPUT_IDR
+   59 00000076 F04F 0C00       LDR              R12,=0x0
+   60 0000007A EA4C 020B       ORR              R2,R12,R11
+   61 0000007E 601A            STR              R2,[R3]
+   62 00000080         
+   63 00000080         
+   64 00000080 BF00    INPUT_IDR
                                NOP
-   61 00000082 4B08            LDR              R3,=0x40020010
-   62 00000084 40023830 
+   65 00000082 4B08            LDR              R3,=0x40020010
+   66 00000084 40023830 
               40020000 
               40020008 
               4002000C 
@@ -82,127 +86,127 @@ ARM Macro Assembler    Page 2
               40020408 
               4002040C 
               40020010         LTORG
-   63 000000A8 F8D3 B000       LDR              R11,[R3]
-   64 000000AC F01B 0F01       TST              R11,#0x1
-   65 000000B0 D0E6            BEQ              INPUT_IDR
-   66 000000B2         
-   67 000000B2         
-   68 000000B2         MAIN                                 ;USED AS LABEL
-   69 000000B2         ;; Variable (Register) Definition
-   70 000000B2 F04F 0000       MOV              R0,#0       ;LINE COUNTER(LINES
+   67 000000A8 F8D3 B000       LDR              R11,[R3]
+   68 000000AC F01B 0F01       TST              R11,#0x1
+   69 000000B0 D0E6            BEQ              INPUT_IDR
+   70 000000B2         
+   71 000000B2         
+   72 000000B2         MAIN                                 ;USED AS LABEL
+   73 000000B2         ;; Variable (Register) Definition
+   74 000000B2 F04F 0000       MOV              R0,#0       ;LINE COUNTER(LINES
                                                              ARE DEFINED AT THE
                                                              END)
-   71 000000B6 F04F 0100       MOV              R1,#0       ;COLUMN COUNTER
-   72 000000BA F04F 0400       MOV              R4,#0       ;OVERALL COUNTER(GO
+   75 000000B6 F04F 0100       MOV              R1,#0       ;COLUMN COUNTER
+   76 000000BA F04F 0400       MOV              R4,#0       ;OVERALL COUNTER(GO
                                                             ES UNTILL 15*15 - 1
                                                             )
-   73 000000BE F04F 5500       MOV              R5,#0x20000000 ;STACK POINTER
-   74 000000C2 A63B            ADR              R6,LINE1    ;ARRAY START POINTE
+   77 000000BE F04F 5500       MOV              R5,#0x20000000 ;STACK POINTER
+   78 000000C2 A63B            ADR              R6,LINE1    ;ARRAY START POINTE
                                                             R
-   75 000000C4 F04F 0800       MOV              R8,#0       ;TEMPORARY REGISTER
+   79 000000C4 F04F 0800       MOV              R8,#0       ;TEMPORARY REGISTER
                                                              FOR WIEGHT MULTIPL
                                                             ICATIONS
-   76 000000C8 F04F 0900       MOV              R9,#0       ;TEMPORARY REGISTER
+   80 000000C8 F04F 0900       MOV              R9,#0       ;TEMPORARY REGISTER
                                                              FOR WIEGHT MULTIPL
                                                             ICATIONS
-   77 000000CC F04F 0A00       MOV              R10,#0      ;TEMPORAY FOR LOAD
-   78 000000D0         
-   79 000000D0 F104 0401 
+   81 000000CC F04F 0A00       MOV              R10,#0      ;TEMPORAY FOR LOAD
+   82 000000D0         
+   83 000000D0 F104 0401 
                        LOOP    ADD              R4,R4,#1
-   80 000000D4 F5B4 7F80       CMP              R4,#256
-   81 000000D8 D047            BEQ              EOF         ;BRANCH TO EOF
-   82 000000DA F04F 0700       MOV              R7,#0       ;ADDED RESULT FOR E
+   84 000000D4 F5B4 7F80       CMP              R4,#256
+   85 000000D8 D047            BEQ              EOF         ;BRANCH TO EOF
+   86 000000DA F04F 0700       MOV              R7,#0       ;ADDED RESULT FOR E
                                                             ACH BYTE
-   83 000000DE F106 0601       ADD              R6,R6,#+1   ;SET THE ELEMENTS
-   84 000000E2 F101 0101       ADD              R1,R1,#+1
-   85 000000E6 2910            CMP              R1,#16
-   86 000000E8 D03A            BEQ              NEWLINE
-   87 000000EA         ;COPIES FIRST ELEMENT TO THE R7
-   88 000000EA         ;FOR PROCESSING AND ADDS +1 TO THE
-   89 000000EA         ;ARRAY START POINTER - POST INDEXED
-   90 000000EA         
-   91 000000EA F8D6 A000       LDR              R10,[R6]
-   92 000000EE EB07 078A       ADD              R7,R7,R10,LSL#2 ;WEIGHT 4 FOR C
+   87 000000DE F106 0601       ADD              R6,R6,#+1   ;SET THE ELEMENTS
+   88 000000E2 F101 0101       ADD              R1,R1,#+1
+   89 000000E6 2910            CMP              R1,#16
+   90 000000E8 D03A            BEQ              NEWLINE
+   91 000000EA         ;COPIES FIRST ELEMENT TO THE R7
+   92 000000EA         ;FOR PROCESSING AND ADDS +1 TO THE
+   93 000000EA         ;ARRAY START POINTER - POST INDEXED
+   94 000000EA         
+   95 000000EA F8D6 A000       LDR              R10,[R6]
+   96 000000EE EB07 078A       ADD              R7,R7,R10,LSL#2 ;WEIGHT 4 FOR C
                                                             URRENT ELEMNET
-   93 000000F2 F04F 0A00       MOV              R10,#0
-   94 000000F6         
-   95 000000F6 F856 AC12       LDR              R10,[R6,#-18]
-   96 000000FA 4457            ADD              R7,R7,R10   ;WEISGHT 1 FOR DIAG
 
 
 
 ARM Macro Assembler    Page 3 
 
 
+   97 000000F2 F04F 0A00       MOV              R10,#0
+   98 000000F6         
+   99 000000F6 F856 AC12       LDR              R10,[R6,#-18]
+  100 000000FA 4457            ADD              R7,R7,R10   ;WEISGHT 1 FOR DIAG
                                                             NOAL ELEMENT (UPPER
                                                              LEFT)
-   97 000000FC         
-   98 000000FC F856 AC10       LDR              R10,[R6,#-16]
-   99 00000100 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
+  101 000000FC         
+  102 000000FC F856 AC10       LDR              R10,[R6,#-16]
+  103 00000100 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
                                                             OAL ELEMENT (UPPER 
                                                             RIGHT)
-  100 00000102         
-  101 00000102 F8D6 A010       LDR              R10,[R6,#+16]
-  102 00000106 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
+  104 00000102         
+  105 00000102 F8D6 A010       LDR              R10,[R6,#+16]
+  106 00000106 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
                                                             OAL ELEMENT (LOWER 
                                                             LEFT)
-  103 00000108         
-  104 00000108 F8D6 A012       LDR              R10,[R6,#+18]
-  105 0000010C 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
+  107 00000108         
+  108 00000108 F8D6 A012       LDR              R10,[R6,#+18]
+  109 0000010C 4457            ADD              R7,R7,R10   ;WEIGHT 1 FOR DIAGN
                                                             OAL ELEMENT (LOWER 
                                                             RIGHT)
-  106 0000010E         
-  107 0000010E         
-  108 0000010E F856 9C11       LDR              R9,[R6,#-17]
-  109 00000112 46C8            MOV              R8,R9
-  110 00000114 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR AB
+  110 0000010E         
+  111 0000010E         
+  112 0000010E F856 9C11       LDR              R9,[R6,#-17]
+  113 00000112 46C8            MOV              R8,R9
+  114 00000114 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR AB
                                                             OVE ELEMENT
-  111 00000118 F04F 0800       MOV              R8,#0
-  112 0000011C F04F 0900       MOV              R9,#0
-  113 00000120         
-  114 00000120 F856 9C01       LDR              R9,[R6,#-1]
-  115 00000124 46C8            MOV              R8,R9
-  116 00000126 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR LE
+  115 00000118 F04F 0800       MOV              R8,#0
+  116 0000011C F04F 0900       MOV              R9,#0
+  117 00000120         
+  118 00000120 F856 9C01       LDR              R9,[R6,#-1]
+  119 00000124 46C8            MOV              R8,R9
+  120 00000126 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR LE
                                                             FT ELEMENT
-  117 0000012A F04F 0800       MOV              R8,#0
-  118 0000012E F04F 0900       MOV              R9,#0
-  119 00000132         
-  120 00000132 F8D6 9001       LDR              R9,[R6,#+1]
-  121 00000136 46C8            MOV              R8,R9
-  122 00000138 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR RI
+  121 0000012A F04F 0800       MOV              R8,#0
+  122 0000012E F04F 0900       MOV              R9,#0
+  123 00000132         
+  124 00000132 F8D6 9001       LDR              R9,[R6,#+1]
+  125 00000136 46C8            MOV              R8,R9
+  126 00000138 EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR RI
                                                             GHT ELEMENT
-  123 0000013C F04F 0800       MOV              R8,#0
-  124 00000140 F04F 0900       MOV              R9,#0
-  125 00000144         
-  126 00000144 F8D6 9011       LDR              R9,[R6,#+17]
-  127 00000148 46C8            MOV              R8,R9
-  128 0000014A EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR BE
+  127 0000013C F04F 0800       MOV              R8,#0
+  128 00000140 F04F 0900       MOV              R9,#0
+  129 00000144         
+  130 00000144 F8D6 9011       LDR              R9,[R6,#+17]
+  131 00000148 46C8            MOV              R8,R9
+  132 0000014A EB07 0748       ADD              R7,R7,R8,LSL#1 ;WEIGHT 2 FOR BE
                                                             LOW ELEMENT
-  129 0000014E F04F 0800       MOV              R8,#0
-  130 00000152 F04F 0900       MOV              R9,#0
-  131 00000156         
-  132 00000156 EA4F 1727       MOV              R7,R7,ASR#4
-  133 0000015A F845 7B01       STR              R7,[R5],#+1 ;STORE THE AVERAGE 
+  133 0000014E F04F 0800       MOV              R8,#0
+  134 00000152 F04F 0900       MOV              R9,#0
+  135 00000156         
+  136 00000156 EA4F 1727       MOV              R7,R7,ASR#4
+  137 0000015A F845 7B01       STR              R7,[R5],#+1 ;STORE THE AVERAGE 
                                                             PIXEL ON THE STACK 
                                                             POINTER AND INCREME
                                                             NT SP
-  134 0000015E         
-  135 0000015E E7B7            B                LOOP        ;BRANCH TO LOOP  
-  136 00000160 F04F 0100 
-                       NEWLINE MOV              R1,#0       ;RESET THE COLUMN C
-                                                            OUNTER
-  137 00000164 F106 0601       ADD              R6,R6,#+1   ;SET THE NEW LINE A
-                                                            DDRESS
+  138 0000015E         
+  139 0000015E E7B7            B                LOOP        ;BRANCH TO LOOP  
+  140 00000160 F04F 0100 
 
 
 
 ARM Macro Assembler    Page 4 
 
 
-  138 00000168 E7B2            B                LOOP
-  139 0000016A E7FE    EOF     B                EOF         ;END OF ALGORITHM 
-  140 0000016C         
-  141 0000016C 00000000 
+                       NEWLINE MOV              R1,#0       ;RESET THE COLUMN C
+                                                            OUNTER
+  141 00000164 F106 0601       ADD              R6,R6,#+1   ;SET THE NEW LINE A
+                                                            DDRESS
+  142 00000168 E7B2            B                LOOP
+  143 0000016A E7FE    EOF     B                EOF         ;END OF ALGORITHM 
+  144 0000016C         
+  145 0000016C 00000000 
               00000000 
               00000000 
               00000000 
@@ -221,7 +225,7 @@ ARM Macro Assembler    Page 4
               00000000 LINE0   DCD              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 ,0 
                                                             ;ZERO BLOCK
-  142 000001B0 00000000 
+  146 000001B0 00000000 
               00000077 
               00000063 
               0000006F 
@@ -239,7 +243,7 @@ ARM Macro Assembler    Page 4
               0000001F 
               00000000 LINE1   DCD              0,119,99,111,141,43,0,12,7,0,10
 ,16,15,33,33,31,0
-  143 000001F4 00000000 
+  147 000001F4 00000000 
               00000060 
               0000005D 
               0000006C 
@@ -254,16 +258,16 @@ ARM Macro Assembler    Page 4
               0000000E 
               00000018 
               00000016 
-              00000016 
-              00000000 LINE2   DCD              0,96,93,108,112,134,58,2,0,9,0,
-0,14,24,22,22,0
-  144 00000238 00000000 
 
 
 
 ARM Macro Assembler    Page 5 
 
 
+              00000016 
+              00000000 LINE2   DCD              0,96,93,108,112,134,58,2,0,9,0,
+0,14,24,22,22,0
+  148 00000238 00000000 
               0000006E 
               00000067 
               00000067 
@@ -281,7 +285,7 @@ ARM Macro Assembler    Page 5
               0000000F 
               00000000 LINE3   DCD              0,110,103,103,106,123,120,59,8,
 0,0,0,3,9,12,15,0
-  145 0000027C 00000000 
+  149 0000027C 00000000 
               00000065 
               00000082 
               0000006F 
@@ -299,7 +303,7 @@ ARM Macro Assembler    Page 5
               00000009 
               00000000 LINE4   DCD              0,101,130,111,96,101,122,125,70
 ,10,3,2,0,5,4,9,0
-  146 000002C0 00000000 
+  150 000002C0 00000000 
               0000007F 
               00000067 
               00000065 
@@ -317,18 +321,18 @@ ARM Macro Assembler    Page 5
               00000007 
               00000000 LINE5   DCD              0,127,103,101,109,108,114,123,1
 24,76,5,0,4,10,0,7,0
-  147 00000304 00000000 
+  151 00000304 00000000 
               00000071 
-              00000076 
-              00000077 
-              00000072 
-              0000006D 
 
 
 
 ARM Macro Assembler    Page 6 
 
 
+              00000076 
+              00000077 
+              00000072 
+              0000006D 
               00000077 
               00000070 
               00000074 
@@ -341,7 +345,7 @@ ARM Macro Assembler    Page 6
               00000003 
               00000000 LINE6   DCD              0,113,118,119,114,109,119,112,1
 16,135,112,26,0,13,0,3,0
-  148 00000348 00000000 
+  152 00000348 00000000 
               0000006F 
               00000074 
               00000076 
@@ -359,7 +363,7 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 LINE7   DCD              0,111,116,118,114,110,112,121,1
 02,110,142,106,26,0,10,0,0
-  149 0000038C 00000000 
+  153 0000038C 00000000 
               0000006C 
               00000071 
               00000074 
@@ -377,23 +381,23 @@ ARM Macro Assembler    Page 6
               00000011 
               00000000 LINE8   DCD              0,108,113,116,115,112,128,96,11
 7,124,101,129,118,23,0,17,0
-  150 000003D0 00000000 
+  154 000003D0 00000000 
               0000006B 
               0000006F 
               00000073 
               00000073 
               00000072 
               00000074 
-              00000077 
-              0000007D 
-              00000072 
-              00000061 
 
 
 
 ARM Macro Assembler    Page 7 
 
 
+              00000077 
+              0000007D 
+              00000072 
+              00000061 
               0000006D 
               0000007B 
               00000074 
@@ -401,7 +405,7 @@ ARM Macro Assembler    Page 7
               0000000A 
               00000000 LINE9   DCD              0,107,111,115,115,114,116,119,1
 25,114,97,109,123,116,43,10,0
-  151 00000414 00000000 
+  155 00000414 00000000 
               0000006C 
               0000006E 
               00000072 
@@ -419,7 +423,7 @@ ARM Macro Assembler    Page 7
               00000038 
               00000000 LINE10  DCD              0,108,110,114,115,115,113,119,1
 16,116,119,110,113,136,134,56,0
-  152 00000458 00000000 
+  156 00000458 00000000 
               0000006F 
               0000006E 
               00000071 
@@ -437,7 +441,7 @@ ARM Macro Assembler    Page 7
               0000008E 
               00000000 LINE11  DCD              0,111,110,113,115,116,124,108,1
 12,120,115,120,124,112,139,142,0
-  153 0000049C 00000000 
+  157 0000049C 00000000 
               00000073 
               0000006F 
               00000071 
@@ -449,19 +453,19 @@ ARM Macro Assembler    Page 7
               0000005E 
               0000007C 
               0000007A 
-              00000068 
-              0000007B 
-              00000072 
-              00000084 
 
 
 
 ARM Macro Assembler    Page 8 
 
 
+              00000068 
+              0000007B 
+              00000072 
+              00000084 
               00000000 LINE12  DCD              0,115,111,113,115,116,110,139,1
 14,94,124,122,104,123,114,132,0
-  154 000004E0 00000000 
+  158 000004E0 00000000 
               00000076 
               00000070 
               00000071 
@@ -479,7 +483,7 @@ ARM Macro Assembler    Page 8
               0000006E 
               00000000 LINE13  DCD              0,118,112,113,115,116,119,116,1
 25,120,103,114,126,110,101,110,0
-  155 00000524 00000000 
+  159 00000524 00000000 
               00000076 
               00000071 
               0000005B 
@@ -497,7 +501,7 @@ ARM Macro Assembler    Page 8
               00000068 
               00000000 LINE14  DCD              0,118,113,91,117,103,113,113,11
 3,114,115,116,116,117,105,104,0
-  156 00000568 00000000 
+  160 00000568 00000000 
               0000007C 
               00000075 
               0000005E 
@@ -514,16 +518,16 @@ ARM Macro Assembler    Page 8
               0000007A 
               0000006C 
               00000000 LINE15  DCD              0,124,117,94,117,103,112,113,11
-3,114,115,116,116,116,122,108,0
-  157 000005AC 00000000 
-              00000000 
-              00000000 
 
 
 
 ARM Macro Assembler    Page 9 
 
 
+3,114,115,116,116,116,122,108,0
+  161 000005AC 00000000 
+              00000000 
+              00000000 
               00000000 
               00000000 
               00000000 
@@ -540,8 +544,8 @@ ARM Macro Assembler    Page 9
               00000000 LINE16  DCD              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 ,0 
                                                             ;ZERO BLOCK
-  158 000005F0         
-  159 000005F0                 END
+  162 000005F0         
+  163 000005F0                 END
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\alg
 orithm_assembly.d -o.\algorithm_assembly.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM
 \CMSIS\Include -IC:\Keil\ARM\Inc\ST\STM32F4xx --predefine="__EVAL SETA 1" --lis
@@ -556,24 +560,24 @@ EOF 0000016A
 
 Symbol: EOF
    Definitions
-      At line 139 in file algorithm_assembly.s
+      At line 143 in file algorithm_assembly.s
    Uses
-      At line 81 in file algorithm_assembly.s
-      At line 139 in file algorithm_assembly.s
+      At line 85 in file algorithm_assembly.s
+      At line 143 in file algorithm_assembly.s
 
 INPUT_IDR 00000080
 
 Symbol: INPUT_IDR
    Definitions
-      At line 60 in file algorithm_assembly.s
+      At line 64 in file algorithm_assembly.s
    Uses
-      At line 65 in file algorithm_assembly.s
+      At line 69 in file algorithm_assembly.s
 Comment: INPUT_IDR used once
 LINE0 0000016C
 
 Symbol: LINE0
    Definitions
-      At line 141 in file algorithm_assembly.s
+      At line 145 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE0 unused
@@ -581,15 +585,15 @@ LINE1 000001B0
 
 Symbol: LINE1
    Definitions
-      At line 142 in file algorithm_assembly.s
+      At line 146 in file algorithm_assembly.s
    Uses
-      At line 74 in file algorithm_assembly.s
+      At line 78 in file algorithm_assembly.s
 Comment: LINE1 used once
 LINE10 00000414
 
 Symbol: LINE10
    Definitions
-      At line 151 in file algorithm_assembly.s
+      At line 155 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE10 unused
@@ -597,7 +601,7 @@ LINE11 00000458
 
 Symbol: LINE11
    Definitions
-      At line 152 in file algorithm_assembly.s
+      At line 156 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE11 unused
@@ -605,7 +609,7 @@ LINE12 0000049C
 
 Symbol: LINE12
    Definitions
-      At line 153 in file algorithm_assembly.s
+      At line 157 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE12 unused
@@ -619,7 +623,7 @@ Relocatable symbols
 
 Symbol: LINE13
    Definitions
-      At line 154 in file algorithm_assembly.s
+      At line 158 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE13 unused
@@ -627,7 +631,7 @@ LINE14 00000524
 
 Symbol: LINE14
    Definitions
-      At line 155 in file algorithm_assembly.s
+      At line 159 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE14 unused
@@ -635,7 +639,7 @@ LINE15 00000568
 
 Symbol: LINE15
    Definitions
-      At line 156 in file algorithm_assembly.s
+      At line 160 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE15 unused
@@ -643,7 +647,7 @@ LINE16 000005AC
 
 Symbol: LINE16
    Definitions
-      At line 157 in file algorithm_assembly.s
+      At line 161 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE16 unused
@@ -651,7 +655,7 @@ LINE2 000001F4
 
 Symbol: LINE2
    Definitions
-      At line 143 in file algorithm_assembly.s
+      At line 147 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE2 unused
@@ -659,7 +663,7 @@ LINE3 00000238
 
 Symbol: LINE3
    Definitions
-      At line 144 in file algorithm_assembly.s
+      At line 148 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE3 unused
@@ -667,7 +671,7 @@ LINE4 0000027C
 
 Symbol: LINE4
    Definitions
-      At line 145 in file algorithm_assembly.s
+      At line 149 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE4 unused
@@ -675,7 +679,7 @@ LINE5 000002C0
 
 Symbol: LINE5
    Definitions
-      At line 146 in file algorithm_assembly.s
+      At line 150 in file algorithm_assembly.s
 
 
 
@@ -689,7 +693,7 @@ LINE6 00000304
 
 Symbol: LINE6
    Definitions
-      At line 147 in file algorithm_assembly.s
+      At line 151 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE6 unused
@@ -697,7 +701,7 @@ LINE7 00000348
 
 Symbol: LINE7
    Definitions
-      At line 148 in file algorithm_assembly.s
+      At line 152 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE7 unused
@@ -705,7 +709,7 @@ LINE8 0000038C
 
 Symbol: LINE8
    Definitions
-      At line 149 in file algorithm_assembly.s
+      At line 153 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE8 unused
@@ -713,7 +717,7 @@ LINE9 000003D0
 
 Symbol: LINE9
    Definitions
-      At line 150 in file algorithm_assembly.s
+      At line 154 in file algorithm_assembly.s
    Uses
       None
 Comment: LINE9 unused
@@ -721,16 +725,16 @@ LOOP 000000D0
 
 Symbol: LOOP
    Definitions
-      At line 79 in file algorithm_assembly.s
+      At line 83 in file algorithm_assembly.s
    Uses
-      At line 135 in file algorithm_assembly.s
-      At line 138 in file algorithm_assembly.s
+      At line 139 in file algorithm_assembly.s
+      At line 142 in file algorithm_assembly.s
 
 MAIN 000000B2
 
 Symbol: MAIN
    Definitions
-      At line 68 in file algorithm_assembly.s
+      At line 72 in file algorithm_assembly.s
    Uses
       At line 3 in file algorithm_assembly.s
 Comment: MAIN used once
@@ -738,9 +742,9 @@ NEWLINE 00000160
 
 Symbol: NEWLINE
    Definitions
-      At line 136 in file algorithm_assembly.s
+      At line 140 in file algorithm_assembly.s
    Uses
-      At line 86 in file algorithm_assembly.s
+      At line 90 in file algorithm_assembly.s
 
 
 
