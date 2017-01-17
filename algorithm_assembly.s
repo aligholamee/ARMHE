@@ -3,8 +3,7 @@
 			EXPORT MAIN			;NEEDED LINE
 				ENTRY			;SHOWS WHEN THE CODE STARTS
 				
-				;activating clocks of the procesor
-			LTORG	
+				;activating clocks of the procesor	
 			LDR R3,=0x40023830
 			LDR R11,[R3]
 			LDR R12,=0x3
@@ -14,21 +13,18 @@
 			
 			;GPIO(input part)
 			;mod
-			LTORG
 			LDR R3,=0x40020000
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
 			;setting the speed
-			LTORG
 			LDR R3,=0x40020008
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
 			;part of pullup & pulldown
-			LTORG
 			LDR R3,=0x4002000c
 			LDR R11,[R3]
 			LDR R12,=0x0
@@ -36,28 +32,24 @@
 			STR R2,[R3]
 			;GPIO(output part)
 			;mod
-			LTORG
 			LDR R3,=0x40020400
 			LDR R11,[R3]
 			LDR R12,=0x1
 			ORR R2,R12,R11
 			STR R2,[R3]
 			;type part
-			LTORG
 			LDR R3,=0x40020404
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
 			;part of setting the speed
-			LTORG
 			LDR R3,=0x40020408
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
 			;part of pullup & pulldown
-			LTORG
 			LDR R3,=0x4002040c
 			LDR R11,[R3]
 			LDR R12,=0x0
@@ -66,13 +58,10 @@
 
 			
 INPUT_IDR   NOP
-			LTORG
 			LDR R3,=0x40020010
 			LTORG
 			LDR R11,[R3]
-			LTORG
 			TST R11,#0x1
-			LTORG
 			BEQ INPUT_IDR
 			
 				
