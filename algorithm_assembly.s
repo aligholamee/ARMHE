@@ -3,53 +3,57 @@
 			EXPORT MAIN			;NEEDED LINE
 				ENTRY			;SHOWS WHEN THE CODE STARTS
 				
-				;activating clocks of the procesor	
+			;CLOCK ACTIVATION	
 			LDR R3,=0x40023830
 			LDR R11,[R3]
 			LDR R12,=0x3
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;the part of GPIO processing
 			
-			;GPIO(input part)
-			;mod
+			;GPIO PROCESSING
+			;GENERAL PURPOSE INPUT
+			;MOD
 			LDR R3,=0x40020000
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;setting the speed
+			
+			;SPEED SETTING
 			LDR R3,=0x40020008
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;part of pullup & pulldown
+			
+			;PULL UP PULL DOWN
 			LDR R3,=0x4002000c
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;GPIO(output part)
-			;mod
+			
+			
+			;GENERAL PURPOSE OUTPUT
+			;MOD
 			LDR R3,=0x40020400
 			LDR R11,[R3]
 			LDR R12,=0x1
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;type part
+			;TYPE
 			LDR R3,=0x40020404
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;part of setting the speed
+			;SPEED SETTING
 			LDR R3,=0x40020408
 			LDR R11,[R3]
 			LDR R12,=0x0
 			ORR R2,R12,R11
 			STR R2,[R3]
-			;part of pullup & pulldown
+			;PULL UP PULL DOWN
 			LDR R3,=0x4002040c
 			LDR R11,[R3]
 			LDR R12,=0x0
